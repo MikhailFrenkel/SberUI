@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+		<variable
+			name="item"
+			type="com.example.sberui.utils.LimitItem" />
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="6dp"
+		android:layout_marginBottom="6dp">
+		<ImageView
+			android:id="@+id/img"
+			android:layout_width="36dp"
+			android:layout_height="40dp"
+			android:layout_marginStart="16dp"
+			app:layout_constraintTop_toTopOf="@+id/header"
+			app:layout_constraintBottom_toBottomOf="@+id/subheader"
+			app:layout_constraintStart_toStartOf="parent"
+			tools:src="@drawable/ic_clock"
+			/>
+		<TextView
+			android:id="@+id/header"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
+			android:text="@{item.header}"
+			android:textSize="16sp"
+			android:textColor="@color/black"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/img"
+			app:layout_constraintEnd_toStartOf="@+id/arrow"
+			tools:text="Изменить суточный лимит"
+			/>
+		<TextView
+			android:id="@+id/subheader"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="2dp"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
+			android:text="@{item.subHeader}"
+			android:textSize="14sp"
+			android:textColor="#8C000000"
+			app:layout_constraintTop_toBottomOf="@id/header"
+			app:layout_constraintStart_toEndOf="@id/img"
+			app:layout_constraintEnd_toStartOf="@+id/arrow"
+			tools:text="На платежи и переводы"
+			/>
+		<ImageView
+			android:id="@+id/arrow"
+			android:layout_width="8dp"
+			android:layout_height="12dp"
+			android:layout_marginEnd="16dp"
+			android:src="@drawable/ic_right_arrow"
+			app:layout_constraintTop_toTopOf="@id/header"
+			app:layout_constraintBottom_toBottomOf="@id/subheader"
+			app:layout_constraintEnd_toEndOf="parent"
+			/>
+		<View
+			android:id="@+id/divider"
+			android:layout_width="0dp"
+			android:layout_height="1dp"
+			android:background="#1F000000"
+			android:layout_marginTop="12dp"
+			app:layout_constraintStart_toStartOf="@id/header"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/subheader"
+			/>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

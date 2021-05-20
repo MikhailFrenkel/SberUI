@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+		<variable
+			name="item"
+			type="com.example.sberui.utils.SubscriptionItem" />
+	</data>
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="216dp"
+		android:layout_height="130dp"
+		android:layout_marginTop="16dp"
+		android:layout_marginBottom="16dp"
+		android:layout_marginEnd="8dp"
+		app:cardCornerRadius="12dp"
+		app:cardElevation="8dp">
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="16dp">
+			<ImageView
+				android:id="@+id/img"
+				android:layout_width="36dp"
+				android:layout_height="40dp"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				tools:src="@drawable/ic_flag"/>
+
+			<TextView
+				android:id="@+id/title"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="12dp"
+				android:text="@{item.title}"
+				android:textColor="@color/black"
+				android:textSize="16sp"
+				app:layout_constraintStart_toEndOf="@id/img"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="@id/img"
+				app:layout_constraintBottom_toBottomOf="@id/img"
+				tools:text="СберПрайм"
+				/>
+
+			<TextView
+				android:id="@+id/text"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="24dp"
+				android:text="@{item.text}"
+				android:textColor="@color/black"
+				android:textSize="14sp"
+				app:layout_constraintBottom_toTopOf="@+id/subtext"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				tools:text="Платёж 9 июля"
+				/>
+
+			<TextView
+				android:id="@+id/subtext"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="2dp"
+				android:text="@{item.subText}"
+				android:textSize="14sp"
+				android:textColor="#8C000000"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				tools:text="199 ₽ в месяц"
+				/>
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</androidx.cardview.widget.CardView>
+</layout>
